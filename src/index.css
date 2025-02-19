@@ -1,0 +1,12 @@
+body h1 {
+  margin: 30px;
+}
+
+.listaLibri {
+  background-color: bisque;
+  padding: 10px;
+  margin: 30px;
+  width: fit-content;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
