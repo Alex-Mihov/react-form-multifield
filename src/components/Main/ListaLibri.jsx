@@ -67,21 +67,60 @@ export default function ListaLibri() {
         setFormData(initialFormData)
     }
 
+    // funzione gestione delle info from
+    function gestioneDatiFrom(e) {
+        // setto tramite setState l'oggetto con le info del form
+        setFormData((currentFormData) => ({
+            ...currentFormData,
+            [e.target.name]: e.target.value,
+        }));
+    }
+
     return (
         <>
             {/* titolo pagina */}
             <h1>Lista Libri</h1>
 
             {/* campo input */}
-            <form className='formlibro' onSubmit={gestioneSubmit}>
+            <form className='formLibro' onSubmit={gestioneSubmit}>
 
                 {/* titolo libro */}
                 <input
                     type="text"
                     name='titolo'
-
+                    onChange={gestioneDatiFrom}
+                    value={formData.titolo}
+                    placeholder="Titolo Libro"
                 />
 
+                {/* autore libro */}
+                <input
+                    type="text"
+                    name='autore'
+                    onChange={gestioneDatiFrom}
+                    value={formData.autore}
+                    placeholder='Nome Autore'
+                />
+
+                {/* contenuto libro */}
+                <textarea
+                    name="contenuto"
+                    onChange={gestioneDatiFrom}
+                    value={formData.contenuto}
+                    placeholder='Contenuto Libro'
+                ></textarea>
+
+                {/* categoria libro */}
+                <input
+                    type="text"
+                    name='categoria'
+                    onChange={gestioneDatiFrom}
+                    value={formData.categoria}
+                    placeholder='Categoria Libro'
+                />
+
+                {/* bottone invio */}
+                <button>Aggiugi</button>
             </form>
 
 
